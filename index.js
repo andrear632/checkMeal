@@ -11,13 +11,27 @@ function loadLocalStorage(){
 
 function getLocalStorage(){
     var checked = JSON.parse(localStorage.needs)
-    var div = document.getElementById("center")
+    var div = document.getElementById("needs")
     for(var i=0; i<checked.length; i++){
-        var p = document.createElement('p')
-        var text = document.createTextNode(checked[i])
-        p.appendChild(text)
-        p.classList.add("test")
-        div.appendChild(p)
+        var row = document.createElement('div')
+        row.classList.add("row")
+
+        var col_img = document.createElement("div")
+        col_img.classList.add("col-3")
+        var img = document.createElement("img")
+        img.src= "icons/"+ checked[i] + ".png"
+        col_img.appendChild(img)
+
+        var col_text = document.createElement('div')
+        col_text.classList.add("col-9")
+        col_text.classList.add("p-5")
+        col_text.classList.add("border")
+        col_text.innerHTML = checked[i]
+
+        row.appendChild(col_img)
+        row.appendChild(col_text)
+
+        div.appendChild(row)
     }
 }
 
