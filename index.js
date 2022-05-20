@@ -1,6 +1,6 @@
 function loadLocalStorage(){
     var checked = JSON.parse(localStorage.needs)
-    var div = document.getElementById("checkboxes").getElementsByTagName("input")
+    var div = document.getElementById("center").getElementsByTagName("input")
     for(var i = 0; i< div.length; i++){
         if(checked.includes(div[i].name)){
             div[i].checked = true
@@ -16,12 +16,13 @@ function getLocalStorage(){
         var p = document.createElement('p')
         var text = document.createTextNode(checked[i])
         p.appendChild(text)
+        p.classList.add("test")
         div.appendChild(p)
     }
 }
 
 function saveLocalStorage() {
-    var div = document.getElementById("checkboxes").getElementsByTagName("input")
+    var div = document.getElementById("center").getElementsByTagName("input")
     var checked = [];
     for (var i = 0; i < div.length; i++) {
         if (div[i].checked) {
