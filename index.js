@@ -13,7 +13,7 @@ function getLocalStorage(){
     var checked = JSON.parse(localStorage.needs)
     var div = document.getElementById("needs")
 
-    if(checked.length == 0){
+    if(checked.length == 0 || typeof(checked) == "undefined"){
         var row = document.createElement('div')
         row.classList.add("row")
         row.classList.add("mx-auto")
