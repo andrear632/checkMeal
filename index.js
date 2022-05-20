@@ -38,12 +38,13 @@ function getLocalStorage(){
         col_text.classList.add("py-4")
         col_text.classList.add("display-4")
         col_text.classList.add("text-center")
+        col_text.classList.add("text-muted")
         col_text.innerHTML = "Add your needs"
 
         row.appendChild(col_text)
         div.appendChild(row)
 
-        document.getElementById("edit").innerHTML = "ADD YOUR NEEDS"
+        document.getElementById("edit").innerHTML = "Add your needs"
         return
     }
 
@@ -60,12 +61,13 @@ function getLocalStorage(){
         col_text.classList.add("py-4")
         col_text.classList.add("display-4")
         col_text.classList.add("text-center")
+        col_text.classList.add("text-muted")
         col_text.innerHTML = "Add your needs"
 
         row.appendChild(col_text)
         div.appendChild(row)
 
-        document.getElementById("edit").innerHTML = "ADD YOUR NEEDS"
+        document.getElementById("edit").innerHTML = "Add your needs"
         return
     }
 
@@ -132,7 +134,7 @@ function getStream() {
   }
   const constraints = {
     video: {
-        facingMode:"environment"
+        facingMode: "environment"
     }
   };
   return navigator.mediaDevices.getUserMedia(constraints).
@@ -147,6 +149,7 @@ function gotStream(stream) {
   videoElement.srcObject = stream;
   setTimeout(resultScan, 3000);
 }
+
 
 function handleError(error) {
   console.error('Error: ', error);
