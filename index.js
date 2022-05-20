@@ -111,3 +111,7 @@ function loadScanBox(){
 
 
 }
+
+function activateSave(){
+    document.getElementById("saveButton").classList.remove("disabled");
+}

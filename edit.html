@@ -35,7 +35,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Gluten free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Gluten free">
                     <label class="" for="flexCheckDefault">
                         Gluten free
                     </label>
@@ -44,7 +44,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Lactose free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Lactose free">
                     <label class="">
                         Lactose free
                     </label>
@@ -53,7 +53,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Corn free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Corn free">
                     <label class="">
                         Corn free
                     </label>
@@ -62,7 +62,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Egg free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Egg free">
                     <label class="">
                         Egg free
                     </label>
@@ -71,7 +71,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Fish free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Fish free">
                     <label class="">
                         Fish free
                     </label>
@@ -80,7 +80,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Mollusc free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Mollusc free">
                     <label class="">
                         Mollusc free
                     </label>
@@ -89,7 +89,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Nuts free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Nuts free">
                     <label class="">
                         Nuts free
                     </label>
@@ -98,7 +98,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Peanuts free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Peanuts free">
                     <label class="">
                         Peanuts free
                     </label>
@@ -107,7 +107,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Shellfish free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Shellfish free">
                     <label class="">
                         Shellfish free
                     </label>
@@ -116,7 +116,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Soy free">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Soy free">
                     <label class="">
                         Soy free
                     </label>
@@ -125,7 +125,7 @@
 
             <div class="row mx-auto">
                 <div class="col-12 py-2 display-6">
-                    <input class="form-check-input mt-1" type="checkbox" name="Vegan">
+                    <input class="form-check-input mt-1" onclick="activateSave()" type="checkbox" name="Vegan">
                     <label class="">
                         Vegan
                     </label>
@@ -142,8 +142,8 @@
             <button onclick="document.location='index.html'" class="btn btn-danger btn-lg">Back</button>
         </div>
         <div class="col-6 text-center">
-            <button onclick="saveLocalStorage(); document.location='index.html'"
-                class="btn btn-lg btn-success">Save</button>
+            <button id="saveButton" onclick="saveLocalStorage(); document.location='index.html'"
+                class="btn disabled btn-lg btn-success">Save</button>
         </div>
     </div>
 
