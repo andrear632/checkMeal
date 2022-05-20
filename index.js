@@ -7,9 +7,6 @@ function loadLocalStorage(){
     var div = document.getElementById("needs")
     var children = div.children
 
-    console.log(div)
-    console.log(children)
-
     for(var i = 0; i < children.length; i++){
         if(checked.includes(children[i].firstElementChild.firstElementChild.name)){
             children[i].firstElementChild.firstElementChild.checked=true   

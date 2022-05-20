@@ -29,11 +29,11 @@
     <script>
         var el = document.getElementById("searchbar")
         el.addEventListener('keyup', (e) => {
-            console.log(e.target.value)
+            //console.log(e.target.value)
             var list = document.getElementById("needs").children
-            console.log(typeof(list))
+            //console.log(typeof(list))
             for(var i = 0; i<list.length; i++){
-                console.log(list[i])
+                //console.log(list[i])
 
                 if(!list[i].firstElementChild.firstElementChild.name.toLowerCase().includes(e.target.value.toLowerCase())){
                     list[i].style.display="none"
