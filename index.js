@@ -115,3 +115,12 @@ function loadScanBox(){
 function activateSave(){
     document.getElementById("saveButton").classList.remove("disabled");
 }
+
+function prova(){
+    var val = confirm("Type your text here.");
+    if (val == true) {
+    alert("You pressed OK.");
+    } else {
+    alert("You pressed Cancel.");
+    }
+}
