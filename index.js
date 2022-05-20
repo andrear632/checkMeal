@@ -125,7 +125,11 @@ function getStream() {
     });
   }
   const constraints = {
-    video: true,
+    video: {
+        facingMode: {
+          exact: "environment"
+        }
+    }
   };
   return navigator.mediaDevices.getUserMedia(constraints).
     then(gotStream).catch(handleError);
