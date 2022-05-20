@@ -1,35 +1,80 @@
-function loadLocalStorage(){
-    if(typeof(localStorage.needs) == "undefined"){
+var all_needs = ["Gluten free", "Lactose free", "Corn free", "Egg free", "Fish free", "Mollusc free", "Nuts free", "Peanuts free", "Shellfish free", "Soy free", "Vegan"].sort()
+function loadLocalStorage() {
+    if (typeof (localStorage.needs) == "undefined") {
         return
     }
-    var checked = JSON.parse(localStorage.needs).sort().reverse()
-    // console.log(checked)
+    var checked = JSON.parse(localStorage.needs).sort()
+    var top = []
+    var bottom = []
     var div = document.getElementById("needs")
     var children = div.children
 
-    for(var i = 0; i < children.length; i++){
-        if(checked.includes(children[i].firstElementChild.firstElementChild.name)){
-            children[i].firstElementChild.firstElementChild.checked=true   
+
+
+    for (var i = 0; i < all_needs.length; i++) {
+        if (checked.includes(all_needs[i])) {
+            top.push(all_needs[i])
         }
+        else {
+            bottom.push(all_needs[i])
+        }
+    }
+    top.sort()
+    bottom.sort()
+    var final = top.concat(bottom)
+
+    for (var i = 0; i < final.length; i++) {
+        var row = document.createElement('div')
+        row.classList.add("row")
+        row.classList.add("mx-auto")
+
+        console.log(row)
+
+        var col = document.createElement('div')
+        col.classList.add("col-12")
+        col.classList.add("py-2")
+        col.classList.add("display-6")
+
+        var input = document.createElement('input')
+        input.classList.add("form-check-input")
+        input.classList.add("mt-1")
+        input.onclick = function () {
+            document.getElementById("saveButton").classList.remove("disabled");
+        }
+        input.type = "checkbox"
+        input.name = final[i]
+        if (i < top.length) {
+            input.checked = true
+        }
+
+        var label = document.createElement('label')
+        label.innerHTML = final[i]
+
+        col.appendChild(input)
+        col.appendChild(label)
+
+        row.appendChild(col)
+
+        div.appendChild(row)
     }
 
 }
 
-function uncheckAll(){
+function uncheckAll() {
     var div = document.getElementById("needs").getElementsByTagName("input")
-    for(var i = 0; i<div.length; i++){
+    for (var i = 0; i < div.length; i++) {
         div[i].checked = false;
     }
 }
 
-function getLocalStorage(){
+function getLocalStorage() {
     var div = document.getElementById("needs")
 
-    if(typeof(localStorage.needs) == "undefined"){
+    if (typeof (localStorage.needs) == "undefined") {
         var row = document.createElement('div')
         row.classList.add("row")
         row.classList.add("mx-auto")
-        
+
         var col_text = document.createElement('div')
         col_text.classList.add("col-12")
         col_text.classList.add("py-4")
@@ -48,11 +93,11 @@ function getLocalStorage(){
     var checked = JSON.parse(localStorage.needs)
 
 
-    if(checked.length == 0){
+    if (checked.length == 0) {
         var row = document.createElement('div')
         row.classList.add("row")
         row.classList.add("mx-auto")
-        
+
         var col_text = document.createElement('div')
         col_text.classList.add("col-12")
         col_text.classList.add("py-4")
@@ -68,7 +113,7 @@ function getLocalStorage(){
         return
     }
 
-    for(var i=0; i<checked.length; i++){
+    for (var i = 0; i < checked.length; i++) {
         var row = document.createElement('div')
         row.classList.add("row")
         row.classList.add("mx-auto")
@@ -79,7 +124,7 @@ function getLocalStorage(){
         img.classList.add("m-auto")
         img.classList.add("d-block")
         img.classList.add("mw-100")
-        img.src= "icons/"+ checked[i] + ".png"
+        img.src = "icons/" + checked[i] + ".png"
         col_img.appendChild(img)
 
         var col_text = document.createElement('div')
@@ -110,51 +155,44 @@ function saveLocalStorage() {
 }
 
 
-function activateSave(){
-    document.getElementById("saveButton").classList.remove("disabled");
-}
-
-
-
-
 var videoElement = document.querySelector('video');
 
-function openCamera(){
+function openCamera() {
     document.getElementById("video").removeAttribute("hidden");
     getStream();
 }
 
 function getStream() {
-  if (window.stream) {
-    window.stream.getTracks().forEach(track => {
-      track.stop();
-    });
-  }
-  const constraints = {
-    video: {
-        facingMode: "environment"
+    if (window.stream) {
+        window.stream.getTracks().forEach(track => {
+            track.stop();
+        });
     }
-  };
-  return navigator.mediaDevices.getUserMedia(constraints).
-    then(gotStream).catch(handleError);
+    const constraints = {
+        video: {
+            facingMode: "environment"
+        }
+    };
+    return navigator.mediaDevices.getUserMedia(constraints).
+        then(gotStream).catch(handleError);
 }
 
 function gotStream(stream) {
-  window.stream = stream; // make stream available to console
-  document.getElementById("divBtnScan").remove();
-  var x = document.getElementById("divScanBox");
-  x.style.display = "block"
-  videoElement.srcObject = stream;
-  setTimeout(resultScan, 3000);
+    window.stream = stream; // make stream available to console
+    document.getElementById("divBtnScan").remove();
+    var x = document.getElementById("divScanBox");
+    x.style.display = "block"
+    videoElement.srcObject = stream;
+    setTimeout(resultScan, 3000);
 }
 
 
 function handleError(error) {
-  console.error('Error: ', error);
+    console.error('Error: ', error);
 }
 
 
-function resultScan(){
+function resultScan() {
     var myModal = new bootstrap.Modal(document.getElementById('myModal'))
     myModal.show()
 }
