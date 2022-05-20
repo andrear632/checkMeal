@@ -6,19 +6,16 @@ function loadLocalStorage(){
     // console.log(checked)
     var div = document.getElementById("needs")
     var children = div.children
-   var top = []
+
     console.log(div)
-    for(var i = children.length-1; i > 0; i--){
-        console.log(children[i])
+    console.log(children)
+
+    for(var i = 0; i < children.length; i++){
         if(checked.includes(children[i].firstElementChild.firstElementChild.name)){
-            children[i].firstElementChild.firstElementChild.checked = true;
-            var removed = div.removeChild(children[i])
-            top.push(removed)
-            div.insertBefore(removed, div.firstChild)
-            console.log(removed)
+            children[i].firstElementChild.firstElementChild.checked=true   
         }
     }
-    console.log(top)
+
 }
 
 function uncheckAll(){
@@ -135,9 +132,7 @@ function getStream() {
   }
   const constraints = {
     video: {
-        facingMode: {
-          exact: "environment"
-        }
+        facingMode:"environment"
     }
   };
   return navigator.mediaDevices.getUserMedia(constraints).
@@ -150,7 +145,7 @@ function gotStream(stream) {
   var x = document.getElementById("divScanBox");
   x.style.display = "block"
   videoElement.srcObject = stream;
-  setTimeout(resultScan(), 3000);
+  setTimeout(resultScan, 3000);
 }
 
 function handleError(error) {
