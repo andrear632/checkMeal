@@ -14,46 +14,139 @@
 </head>
 
 <body onload="loadLocalStorage();">
-    <div class="container mt-5">
-        <div class="display-1 mx-auto d-block text-center">Edit needs</div>
+    <div class="container mt-3">
+        <div class="display-1 mx-auto d-block text-center">Select your needs</div>
     </div>
 
-    <div id="needs" class="container-sm my-5 py-3 border border-warning border-2 rounded-4 h-50 overflow-auto">
+    <div class="my-3 text-center">
+        <svg class="bi bi-search me-3" id="searchicon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+            
+        <input id="searchbar" class="me-4" type="text"></input>
+    </div>
 
-        <div class="row mx-auto">
-            <div class="col-12 py-4 display-3">
-                <input class="form-check-input mt-1" type="checkbox" name="Gluten free">
-                <label class="" for="flexCheckDefault">
-                    Gluten free
-                </label>
+    <div class="my-4 text-center">
+        <button class="btn btn-secondary" onclick="uncheckAll()">uncheck all</button>
+    </div>
+
+    <div class="px-3">
+        <div id="needs" class="container-sm my-3 py-3 border border-warning border-2 rounded-4 h-50 overflow-auto">
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Gluten free">
+                    <label class="" for="flexCheckDefault">
+                        Gluten free
+                    </label>
+                </div>
             </div>
 
-        </div>
-
-        <div class="row mx-auto">
-            <div class="col-12 py-4 display-3">
-                <input class="form-check-input mt-1" type="checkbox" name="Lactose free">
-                <label class="">
-                    Lactose free
-                </label>
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Lactose free">
+                    <label class="">
+                        Lactose free
+                    </label>
+                </div>
             </div>
 
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Corn free">
+                    <label class="">
+                        Corn free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Egg free">
+                    <label class="">
+                        Egg free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Fish free">
+                    <label class="">
+                        Fish free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Mollusc free">
+                    <label class="">
+                        Mollusc free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Nuts free">
+                    <label class="">
+                        Nuts free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Peanuts free">
+                    <label class="">
+                        Peanuts free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Shellfish free">
+                    <label class="">
+                        Shellfish free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Soy free">
+                    <label class="">
+                        Lactose free
+                    </label>
+                </div>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="col-12 py-2 display-6">
+                    <input class="form-check-input mt-1" type="checkbox" name="Vegan">
+                    <label class="">
+                        Vegan free
+                    </label>
+                </div>
+            </div>
+
+
         </div>
-
-
     </div>
 
 
-
-    <div id="buttons" class="row">
-        <div class="col-6">
-            <button onclick="document.location='index.html'" class="mx-auto d-block btn btn-danger btn-lg">BACK</button>
+    <div id="buttons" class="row g-0">
+        <div class="col-6 text-center">
+            <button onclick="document.location='index.html'" class="btn btn-danger btn-lg">BACK</button>
         </div>
-        <div class="col-6">
+        <div class="col-6 text-center">
             <button onclick="saveLocalStorage(); document.location='index.html'"
-                class="mx-auto d-block btn btn-lg btn-success">SAVE</button>
+                class="btn btn-lg btn-success">SAVE</button>
         </div>
     </div>
+
     <div class="btn-group fixed-bottom">
         <a href="" type="button" class="mybtn1 btn border border-1 rounded-0 py-3">YOUR NEEDS</a>
         <a href="" type="button" class="btn btn-warning border border-1 rounded-0 py-3">SCAN</a>
