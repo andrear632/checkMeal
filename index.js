@@ -12,6 +12,13 @@ function loadLocalStorage(){
     console.log(checked)
 }
 
+function uncheckAll(){
+    var div = document.getElementById("needs").getElementsByTagName("input")
+    for(var i = 0; i<div.length; i++){
+        div[i].checked = false;
+    }
+}
+
 function getLocalStorage(){
     var div = document.getElementById("needs")
 
