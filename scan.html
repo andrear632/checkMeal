@@ -19,7 +19,7 @@
 
     <div class="container mt-5 pt-5" id="divBtnScan">
         <button id="scanbtn" onclick="openCamera()" class="btn btn-warning mx-auto d-block my-5 btn-lg">
-            SCAN
+            Open the camera <br> to scan a barcode
         </button>
     </div>
 
@@ -49,8 +49,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" onclick="document.location='scan.html'">Scan again</button>
-                    <button type="button" class="btn btn-success">Ingredients</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Scan again</button>
+                    <button type="button" class="btn btn-success" onclick="document.location='ingredients.html'">Ingredients</button>
                 </div>
 
             </div>
