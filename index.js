@@ -103,24 +103,48 @@ function saveLocalStorage() {
     console.log(checked)
 }
 
-function loadScanBox(){
-    var x = document.getElementById("divBtnScan");
-    x.style.display = "none"
-    var x = document.getElementById("divScanBox");
-    x.style.display = "block"
-
-
-}
 
 function activateSave(){
     document.getElementById("saveButton").classList.remove("disabled");
 }
 
-function prova(){
-    var val = confirm("Type your text here.");
-    if (val == true) {
-    alert("You pressed OK.");
-    } else {
-    alert("You pressed Cancel.");
-    }
+
+
+
+var videoElement = document.querySelector('video');
+
+function openCamera(){
+    document.getElementById("video").removeAttribute("hidden");
+    getStream();
+}
+
+function getStream() {
+  if (window.stream) {
+    window.stream.getTracks().forEach(track => {
+      track.stop();
+    });
+  }
+  const constraints = {
+    video: true,
+  };
+  return navigator.mediaDevices.getUserMedia(constraints).
+    then(gotStream).catch(handleError);
+}
+
+function gotStream(stream) {
+  window.stream = stream; // make stream available to console
+  document.getElementById("divBtnScan").remove();
+  var x = document.getElementById("divScanBox");
+  x.style.display = "block"
+  videoElement.srcObject = stream;
+  setTimeout(resultScan(), 3000);
+}
+
+function handleError(error) {
+  console.error('Error: ', error);
+}
+
+
+function resultScan(){
+    
 }
