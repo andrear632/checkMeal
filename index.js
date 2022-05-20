@@ -102,3 +102,12 @@ function saveLocalStorage() {
     localStorage.needs = JSON.stringify(checked)
     console.log(checked)
 }
+
+function loadScanBox(){
+    var x = document.getElementById("divBtnScan");
+    x.style.display = "none"
+    var x = document.getElementById("divScanBox");
+    x.style.display = "block"
+
+
+}
