@@ -85,7 +85,8 @@ function getLocalStorage(){
         var col_text = document.createElement('div')
         col_text.classList.add("col-8")
         col_text.classList.add("py-4")
-        col_text.classList.add("display-4")
+        col_text.classList.add("display-6")
+        col_text.classList.add("mb-1")
         col_text.innerHTML = checked[i]
 
         row.appendChild(col_img)
