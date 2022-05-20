@@ -26,6 +26,27 @@
         <input id="searchbar" class="me-4" type="text"></input>
     </div>
 
+    <script>
+        var el = document.getElementById("searchbar")
+        el.addEventListener('keyup', (e) => {
+            console.log(e.target.value)
+            var list = document.getElementById("needs").children
+            console.log(typeof(list))
+            for(var i = 0; i<list.length; i++){
+                console.log(list[i])
+
+                if(!list[i].firstElementChild.firstElementChild.name.toLowerCase().includes(e.target.value.toLowerCase())){
+                    list[i].style.display="none"
+                }
+                else{
+                    list[i].style.display="" 
+                }
+
+            }
+            
+        })
+    </script>
+
     <div class="my-4 text-center">
         <button class="btn btn-secondary" onclick="uncheckAll()">uncheck all</button>
     </div>
