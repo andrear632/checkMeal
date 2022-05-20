@@ -1,4 +1,7 @@
 function loadLocalStorage(){
+    if(typeof(localStorage.needs) == "undefined"){
+        return
+    }
     var checked = JSON.parse(localStorage.needs)
     var div = document.getElementById("needs").getElementsByTagName("input")
     for(var i = 0; i< div.length; i++){
@@ -11,7 +14,7 @@ function loadLocalStorage(){
 
 function getLocalStorage(){
     var div = document.getElementById("needs")
-     
+
     if(typeof(localStorage.needs) == "undefined"){
         var row = document.createElement('div')
         row.classList.add("row")
