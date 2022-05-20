@@ -20,17 +20,16 @@ function getLocalStorage(){
         var col_img = document.createElement("div")
         col_img.classList.add("col-4")
         var img = document.createElement("img")
-        img.classList.add("mx-auto")
+        img.classList.add("m-auto")
         img.classList.add("d-block")
-        img.classList.add("img-fluid")
-        img.classList.add("rounded-circle")
+        img.classList.add("mw-100")
         img.src= "icons/"+ checked[i] + ".png"
         col_img.appendChild(img)
 
         var col_text = document.createElement('div')
         col_text.classList.add("col-8")
-        col_text.classList.add("p-5")
-        col_text.classList.add("display-3")
+        col_text.classList.add("py-4")
+        col_text.classList.add("display-4")
         col_text.innerHTML = checked[i]
 
         row.appendChild(col_img)
