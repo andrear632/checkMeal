@@ -15,17 +15,22 @@ function getLocalStorage(){
     for(var i=0; i<checked.length; i++){
         var row = document.createElement('div')
         row.classList.add("row")
+        row.classList.add("mx-auto")
 
         var col_img = document.createElement("div")
-        col_img.classList.add("col-3")
+        col_img.classList.add("col-4")
         var img = document.createElement("img")
+        img.classList.add("mx-auto")
+        img.classList.add("d-block")
+        img.classList.add("img-fluid")
+        img.classList.add("rounded-circle")
         img.src= "icons/"+ checked[i] + ".png"
         col_img.appendChild(img)
 
         var col_text = document.createElement('div')
-        col_text.classList.add("col-9")
+        col_text.classList.add("col-8")
         col_text.classList.add("p-5")
-        col_text.classList.add("border")
+        col_text.classList.add("display-3")
         col_text.innerHTML = checked[i]
 
         row.appendChild(col_img)
