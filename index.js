@@ -1,6 +1,6 @@
 function loadLocalStorage(){
     var checked = JSON.parse(localStorage.needs)
-    var div = document.getElementById("center").getElementsByTagName("input")
+    var div = document.getElementById("needs").getElementsByTagName("input")
     for(var i = 0; i< div.length; i++){
         if(checked.includes(div[i].name)){
             div[i].checked = true
@@ -12,6 +12,26 @@ function loadLocalStorage(){
 function getLocalStorage(){
     var checked = JSON.parse(localStorage.needs)
     var div = document.getElementById("needs")
+
+    if(checked.length == 0){
+        var row = document.createElement('div')
+        row.classList.add("row")
+        row.classList.add("mx-auto")
+        
+        var col_text = document.createElement('div')
+        col_text.classList.add("col-12")
+        col_text.classList.add("py-4")
+        col_text.classList.add("display-4")
+        col_text.classList.add("text-center")
+        col_text.innerHTML = "Add your needs"
+
+        row.appendChild(col_text)
+        div.appendChild(row)
+
+        document.getElementById("edit").innerHTML = "ADD YOUR NEEDS"
+        return
+    }
+
     for(var i=0; i<checked.length; i++){
         var row = document.createElement('div')
         row.classList.add("row")
@@ -40,7 +60,7 @@ function getLocalStorage(){
 }
 
 function saveLocalStorage() {
-    var div = document.getElementById("center").getElementsByTagName("input")
+    var div = document.getElementById("needs").getElementsByTagName("input")
     var checked = [];
     for (var i = 0; i < div.length; i++) {
         if (div[i].checked) {
