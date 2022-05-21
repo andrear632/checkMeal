@@ -193,7 +193,7 @@ function handleError(error) {
 
 
 function resultScan() {
-    var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+    var myModal = new bootstrap.Modal(document.getElementById('flora'))
     myModal.show()
 }
 
@@ -203,3 +203,27 @@ function showIngredientsFlora() {
     myModal.show()
 }
 
+function secondScan() {
+    setTimeout(function() {
+
+        document.getElementById("closeButton").click()
+        var modal = new bootstrap.Modal(document.getElementById('tortellini'));
+        modal.show()
+
+    }, 3000)
+}
+function showIngredientsTortellini() {
+    document.getElementById("closeButton2").click()
+    var myModal = new bootstrap.Modal(document.getElementById('tortelliniIngredientsModal'));
+    myModal.show()
+}
+
+function thirdScan(){
+    setTimeout(function() {
+
+        document.getElementById("closeButton").click()
+        var modal = new bootstrap.Modal(document.getElementById('unknown'));
+        modal.show()
+
+    }, 3000)  
+}

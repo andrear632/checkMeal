@@ -14,7 +14,8 @@
 
 <body>
     <div class="container mt-5 px-5 py-3">
-        <div class="display-6 mx-auto d-block text-center">Scan a barcode to know if the product is suitable for you!</div>
+        <div class="display-6 mx-auto d-block text-center">Scan a barcode to know if the product is suitable for you!
+        </div>
     </div>
 
     <div class="container mt-5 pt-5" id="divBtnScan">
@@ -24,46 +25,174 @@
     </div>
 
     <div class="px-3" id="divScanBox" style="display:none;">
-        <div style="position: relative;" class="container border border-warning border-2 rounded-4 h-50 overflow-hidden g-0">
-            
+        <div style="position: relative;"
+            class="container border border-warning border-2 rounded-4 h-50 overflow-hidden g-0">
+
             <video style="position: absolute;" class="w-100" id="video" autoplay muted playsinline hidden></video>
-            
+
             <div class="container h-100 g-0 d-flex align-items-center justify-content-center">
-                    <img style="opacity: 0.5;" class="w-75" src="icons/scanner.png">
+                <img style="opacity: 0.5;" class="w-75" src="icons/scanner.png">
             </div>
 
             <script async src="index.js"></script>
         </div>
     </div>
-    
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
+
+    <!-- RICE FLORA -->
+    <div class="modal" id="flora">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Rice flora</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                
+                    <button id="closeButton" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body">
-                This product is ok!
+                <div class="modal-body" style="color: green;">
+                    This product is ok!
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Scan again</button>
-                    <button type="button" class="btn btn-success" onclick="document.location='ingredients.html'">Ingredients</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="secondScan()">Scan
+                        again</button>
+                    <button type="button" class="btn btn-success" onclick="showIngredientsFlora()">Ingredients</button>
                 </div>
 
             </div>
         </div>
     </div>
 
-    
+    <div class="modal" id="floraIngredientsModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Rice flora Ingredients</h4>
+                    <button d="closeButton" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="color: green;">
+                    This product is ok!
+                    <div class="px-3">
+                        <div id="needs"
+                            class="container-sm my-3 py-3 border border-warning border-2 rounded-4 h-50 overflow-auto">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="secondScan()">Scan
+                        again</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- TORTELLINI -->
+    <div class="modal" id="tortellini">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Tortellini</h4>
+                    <button id="closeButton2" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="color: red;">
+                    This product is NOT ok!
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="thirdScan()">Scan
+                        again</button>
+                    <button type="button" class="btn btn-success"
+                        onclick="showIngredientsTortellini()">Ingredients</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="tortelliniIngredientsModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Tortellini Ingredients</h4>
+                    <button d="closeButton" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="color: red;">
+                    This product is NOT ok!
+                    <div class="px-3">
+                        <div id="needs"
+                            class="container-sm my-3 py-3 border border-warning border-2 rounded-4 h-50 overflow-auto">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="thirdScan()">Scan
+                        again</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- UNKNOWN -->
+    <div class="modal" id="unknown">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Product not found</h4>
+                    <button id="closeButton3" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="color: orange;">
+                    Unfortunately we do not know :(
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Scan
+                        again</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="btn-group btn-group-lg fixed-bottom">
         <a href="needs.html" type="button" class="btn btn-warning border border-1 rounded-0 py-2">Your Needs</a>
         <a href="scan.html" type="button" class="mybtn1 btn border btn-warning border-1 rounded-0 py-2">Scan</a>
