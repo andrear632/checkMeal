@@ -36,15 +36,15 @@
         </div>
     </div>
     
-    <!-- The Modal RICE FLORA-->
-    <div class="modal" id="scanResult">
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Rice flora</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeButton"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 
                 </div>
 
@@ -55,33 +55,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="resultScan(1)">Scan again</button>
-                    <button type="button" class="btn btn-success" onclick="showIngredients()">Ingredients</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="IngredientsModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Rice flora Ingredients</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body" style="color: green;">
-                This product is ok!
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-bs-dismiss="modal">Scan again</button>
+                    <button type="button" class="btn btn-success" onclick="document.location='ingredients.html'">Ingredients</button>
                 </div>
 
             </div>
