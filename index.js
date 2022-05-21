@@ -192,7 +192,40 @@ function handleError(error) {
 }
 
 
-function resultScan() {
-    var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+function resultScan(number) {
+
+    if (typeof (number) == "undefined") {
+        var myModal = new bootstrap.Modal(document.getElementById('scanResult'))
+        myModal.show()
+    }
+    else if (number == 1) {
+        var modal = document.getElementById("scanResult")
+        modal.firstElementChild.firstElementChild.firstElementChild.firstElementChild.innerHTML = "Tortellini"
+        modal.firstElementChild.firstElementChild.children[1].innerHTML = "This product is NOT ok!"
+        modal.firstElementChild.firstElementChild.children[2].firstElementChild.onclick = function () {
+            var modal = document.getElementById("scanResult")
+            modal.firstElementChild.firstElementChild.firstElementChild.firstElementChild.innerHTML = "Product not found"
+            modal.firstElementChild.firstElementChild.children[1].innerHTML = "Unfortunately we do not know :("
+            modal.firstElementChild.firstElementChild.children[2].firstElementChild.onclick = ""
+            setTimeout(function () {
+                var myModal = new bootstrap.Modal(document.getElementById('scanResult'))
+                myModal.show()
+            }, 3000)
+        }
+
+
+        setTimeout(function () {
+            var myModal = new bootstrap.Modal(document.getElementById('scanResult'))
+            myModal.show()
+        }, 3000)
+    }
+
+
+}
+
+function showIngredients() {
+    document.getElementById("closeButton").click()
+    var myModal = new bootstrap.Modal(document.getElementById('IngredientsModal'));
     myModal.show()
 }
+
