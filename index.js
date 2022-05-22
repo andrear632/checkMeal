@@ -221,7 +221,7 @@ function secondScan() {
     Flora.hide()
     FloraIng.hide()
     videoElement.play()
-    setTimeout(function() {
+    setTimeout(function () {
         videoElement.pause()
         Rana.show()
     }, timeout)
@@ -231,24 +231,32 @@ function showIngredientsTortellini() {
     RanaIng.show()
 }
 
-function thirdScan(){
+function thirdScan() {
     Rana.hide()
     RanaIng.hide()
     videoElement.play()
-    setTimeout(function() {
+    setTimeout(function () {
         videoElement.pause()
         Unk.show()
-    }, timeout)  
+    }, timeout)
 }
 
-function activePopover(){
-    console.log("HERE")
-    const popover = new bootstrap.Popover(".popover-dismiss", {
-        trigger: 'focus'
-      })
-    }
-
-function lastScan(){
+function lastScan() {
     Unk.hide()
     videoElement.play()
+}
+
+function activatePopover() {
+    var pop = bootstrap.Popover.getInstance("#edit")
+    pop.show()
+
+    setTimeout(function() {
+        document.body.addEventListener("click", disablePopover)
+    }, 500)
+}
+
+function disablePopover(){
+    document.body.removeEventListener("click", disablePopover)
+    var pop = bootstrap.Popover.getInstance("#edit")
+    pop.hide()
 }
