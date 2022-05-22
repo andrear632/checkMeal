@@ -256,7 +256,7 @@ function activatePopover(location) {
     var pop = bootstrap.Popover.getInstance(selector)
     if (location == "edit") {
         pop.setContent({
-            '.popover-body': 'Tap here to edit you dietary needs. They will be used to check you products you scan and to filter restaurants menus'
+            '.popover-body': 'Tap here to edit you dietary needs. They will be used to check the products you scan and to filter restaurants menus'
         })
     }
     else if (location == "pop") {
