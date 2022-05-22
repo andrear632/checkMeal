@@ -245,7 +245,6 @@ function lastScan() {
 }
 
 function modalLegend() {
-
     var Legend = new bootstrap.Modal(document.getElementById('leg'))
     Legend.show()
 }
