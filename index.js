@@ -90,7 +90,7 @@ function getLocalStorage() {
         return
     }
 
-    var checked = JSON.parse(localStorage.needs)
+    var checked = JSON.parse(localStorage.needs).sort()
 
 
     if (checked.length == 0) {
