@@ -20,7 +20,7 @@ function loadLocalStorage() {
         }
         top.sort()
         bottom.sort()
-         final = top.concat(bottom)
+        final = top.concat(bottom)
     }
     for (var i = 0; i < final.length; i++) {
         var row = document.createElement('div')
@@ -242,6 +242,12 @@ function thirdScan() {
 function lastScan() {
     Unk.hide()
     videoElement.play()
+}
+
+function modalLegend() {
+
+    var Legend = new bootstrap.Modal(document.getElementById('leg'))
+    Legend.show()
 }
 
 var globalLocation;
