@@ -255,28 +255,32 @@ function activatePopover(location) {
     var selector = "#" + location
     var pop = bootstrap.Popover.getInstance(selector)
     if (location == "edit") {
-
         pop.setContent({
             '.popover-body': 'Tap here to edit you dietary needs. They will be used to check you products you scan and to filter restaurants menus'
         })
-        
     }
-    else if(location == "pop"){
-
+    else if (location == "pop") {
+        pop.setContent({
+            '.popover-body': 'Put the barcode of the product inside this frame'
+        })
+    }
+    else if (location == "searchrest") {
+        pop.setContent({
+            '.popover-body': 'Tap here to search for a restaurant based on the chosen filters and view its filtered menu according to your dietary needs'
+        })
     }
 
     pop.show()
     setTimeout(function () {
         document.body.addEventListener("click", disablePopover)
-    }, 500)
+    }, 50)
 }
 
 function disablePopover() {
     var selector = "#" + globalLocation
     var pop = bootstrap.Popover.getInstance(selector)
     pop.hide()
-    setTimeout(function() {
-
-    document.body.removeEventListener("click", disablePopover)
-    }, 500)
+    setTimeout(function () {
+        document.body.removeEventListener("click", disablePopover)
+    }, 50)
 }
