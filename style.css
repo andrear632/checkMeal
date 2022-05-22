@@ -1,30 +1,7 @@
-/*
+
 body {
     overflow: hidden;
 }
-
-.test {
-    margin-left: 5%;
-    background: white;
-    width: 90%;
-}
-
-#center {
-    margin: 20vh auto 0 auto;
-    max-width: 70%;
-    width: 100vw;
-    height: 50vh;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 10px;
-
-
-#buttons {
-    width: 20vw;
-    margin-left: 42vw;
-    margin-top: 1vh;
-}
-}*/
 
 .mybtn1 {
     background-color: rgba(235, 92, 42, 0.9) !important;
