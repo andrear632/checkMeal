@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body onload="createModals()">
     <div class="container mt-5 px-5 py-3">
         <div class="display-6 mx-auto d-block text-center">Scan a barcode to know if the product is suitable for you!
         </div>
@@ -45,13 +45,13 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Rice flora</h4>
-                    <button id="closeButton" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title text-success">Rice flora</h4>
+                    <button id="closeButton" type="button" class="btn-close" data-bs-dismiss="modal" onclick="secondScan()"></button>
 
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body" style="color: green;">
+                <div class="modal-body h5">
                     This product is ok!
                 </div>
 
@@ -72,20 +72,20 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Rice flora Ingredients</h4>
-                    <button d="closeButton" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title text-success">Rice flora ingredients</h4>
+                    <button id="closeButtonBis" type="button" class="btn-close" data-bs-dismiss="modal" onclick="secondScan()"></button>
 
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body" style="color: green;">
+                <div class="modal-body h5">
                     This product is ok!
                     <div class="px-3">
-                        <div id="needs"
-                            class="container-sm my-3 py-3 border border-warning border-2 rounded-4 h-50 overflow-auto">
+                        <div style="height:50vh!important;"
+                            class="container-sm my-3 py-3 border border-success border-2 rounded-4 h-50 overflow-auto">
                             <div class="row mx-auto">
-                                <div class="col-12 py-4 display-4 text-center" style="color: black;">
-                                    Brown rice
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Brown rice
                                 </div>
                             </div>
 
@@ -112,21 +112,21 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Tortellini</h4>
-                    <button id="closeButton2" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title text-danger">Tortellini</h4>
+                    <button id="closeButton2" type="button" class="btn-close" data-bs-dismiss="modal" onclick="thirdScan()"></button>
 
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body" style="color: red;">
+                <div class="modal-body h5">
                     This product is NOT ok!
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="thirdScan()">Scan
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="thirdScan()">Scan
                         again</button>
-                    <button type="button" class="btn btn-success"
+                    <button type="button" class="btn btn-danger"
                         onclick="showIngredientsTortellini()">Ingredients</button>
                 </div>
 
@@ -140,26 +140,84 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Tortellini Ingredients</h4>
-                    <button d="closeButton" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title text-danger">Tortellini Ingredients</h4>
+                    <button id="closeButton2Bis" type="button" class="btn-close" data-bs-dismiss="modal" onclick="thirdScan()"></button>
 
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body" style="color: red;">
+                <div class="modal-body h5">
                     This product is NOT ok!
                     <div class="px-3">
-                        <div id="needs"
-                            class="container-sm my-3 py-3 border border-warning border-2 rounded-4 h-50 overflow-auto">
-
-
+                        <div style="height:50vh!important;"
+                            class="container-sm my-3 py-3 border border-danger border-2 rounded-4 h-50 overflow-auto">
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Wheat flour
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Eggs
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Durum wheat flour
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Pig meat
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Bread crumbs
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Water
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Salt
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Yeast
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Powdered milk
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Natual flavours
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Nutmeg
+                                </div>
+                            </div>
+                            <div class="row mx-auto">
+                                <div class="col-12 py-2 display-6 text-body">
+                                    - Black pepper
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="thirdScan()">Scan
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="thirdScan()">Scan
                         again</button>
                 </div>
 
@@ -177,19 +235,19 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Product not found</h4>
-                    <button id="closeButton3" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title text-warning">Product not found</h4>
+                    <button id="closeButton3" type="button" class="btn-close" data-bs-dismiss="modal" onclick="lastScan()"></button>
 
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body" style="color: orange;">
+                <div class="modal-body h5">
                     Unfortunately we do not know :(
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Scan
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" onclick="lastScan()">Scan
                         again</button>
                 </div>
 

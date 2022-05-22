@@ -48,6 +48,7 @@ function loadLocalStorage() {
         }
 
         var label = document.createElement('label')
+        label.classList.add("mx-3")
         label.innerHTML = final[i]
 
         col.appendChild(input)
@@ -183,7 +184,7 @@ function gotStream(stream) {
     var x = document.getElementById("divScanBox");
     x.style.display = "block"
     videoElement.srcObject = stream;
-    setTimeout(resultScan, 3000);
+    setTimeout(resultScan, timeout);
 }
 
 
@@ -191,39 +192,56 @@ function handleError(error) {
     console.error('Error: ', error);
 }
 
+var Flora;
+var FloraIng;
+var Rana;
+var RanaIng;
+var Unk;
+var timeout = 1000;
+
+function createModals() {
+    Flora = new bootstrap.Modal(document.getElementById('flora'))
+    FloraIng = new bootstrap.Modal(document.getElementById('floraIngredientsModal'));
+    Rana = new bootstrap.Modal(document.getElementById('tortellini'));
+    RanaIng = new bootstrap.Modal(document.getElementById('tortelliniIngredientsModal'));
+    Unk = new bootstrap.Modal(document.getElementById('unknown'));
+}
 
 function resultScan() {
-    var myModal = new bootstrap.Modal(document.getElementById('flora'))
-    myModal.show()
+    videoElement.pause()
+    Flora.show()
 }
 
 function showIngredientsFlora() {
-    document.getElementById("closeButton").click()
-    var myModal = new bootstrap.Modal(document.getElementById('floraIngredientsModal'));
-    myModal.show()
+    Flora.hide()
+    FloraIng.show()
 }
 
 function secondScan() {
+    Flora.hide()
+    FloraIng.hide()
+    videoElement.play()
     setTimeout(function() {
-
-        document.getElementById("closeButton").click()
-        var modal = new bootstrap.Modal(document.getElementById('tortellini'));
-        modal.show()
-
-    }, 3000)
+        videoElement.pause()
+        Rana.show()
+    }, timeout)
 }
 function showIngredientsTortellini() {
-    document.getElementById("closeButton2").click()
-    var myModal = new bootstrap.Modal(document.getElementById('tortelliniIngredientsModal'));
-    myModal.show()
+    Rana.hide()
+    RanaIng.show()
 }
 
 function thirdScan(){
+    Rana.hide()
+    RanaIng.hide()
+    videoElement.play()
     setTimeout(function() {
+        videoElement.pause()
+        Unk.show()
+    }, timeout)  
+}
 
-        document.getElementById("closeButton").click()
-        var modal = new bootstrap.Modal(document.getElementById('unknown'));
-        modal.show()
-
-    }, 3000)  
+function lastScan(){
+    Unk.hide()
+    videoElement.play()
 }
