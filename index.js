@@ -162,6 +162,7 @@ var videoElement = document.querySelector('video');
 
 function openCamera() {
     document.getElementById("video").removeAttribute("hidden");
+    document.getElementById('faq').style.visibility = ""
     getStream();
 }
 
@@ -248,24 +249,34 @@ function lastScan() {
     videoElement.play()
 }
 
+var globalLocation;
 function activatePopover(location) {
-
+    globalLocation = location
+    var selector = "#" + location
+    var pop = bootstrap.Popover.getInstance(selector)
     if (location == "edit") {
-        var selector = "#" + location
-        var pop = bootstrap.Popover.getInstance(selector)
+
         pop.setContent({
             '.popover-body': 'Tap here to edit you dietary needs. They will be used to check you products you scan and to filter restaurants menus'
         })
-        pop.show()
+        
+    }
+    else if(location == "pop"){
+
     }
 
+    pop.show()
     setTimeout(function () {
         document.body.addEventListener("click", disablePopover)
     }, 500)
 }
 
 function disablePopover() {
-    document.body.removeEventListener("click", disablePopover)
-    var pop = bootstrap.Popover.getInstance("#edit")
+    var selector = "#" + globalLocation
+    var pop = bootstrap.Popover.getInstance(selector)
     pop.hide()
+    setTimeout(function() {
+
+    document.body.removeEventListener("click", disablePopover)
+    }, 500)
 }
