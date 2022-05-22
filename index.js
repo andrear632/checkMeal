@@ -81,7 +81,7 @@ function getLocalStorage() {
         col_text.classList.add("display-4")
         col_text.classList.add("text-center")
         col_text.classList.add("text-muted")
-        col_text.innerHTML = "Add your needs"
+        col_text.innerHTML = "No need selected"
 
         row.appendChild(col_text)
         div.appendChild(row)
@@ -104,7 +104,7 @@ function getLocalStorage() {
         col_text.classList.add("display-4")
         col_text.classList.add("text-center")
         col_text.classList.add("text-muted")
-        col_text.innerHTML = "Add your needs"
+        col_text.innerHTML = "No need selected"
 
         row.appendChild(col_text)
         div.appendChild(row)
@@ -150,6 +150,15 @@ function saveLocalStorage() {
         }
     }
     localStorage.needs = JSON.stringify(checked)
+
+    
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    var toastList = toastElList.map(function(toastEl) {
+        return new bootstrap.Toast(toastEl)
+    })
+    toastList.forEach(toast => toast.show())
+
+    setTimeout(function() {document.location='needs.html'}, 2000);
 }
 
 
@@ -195,7 +204,7 @@ var FloraIng;
 var Rana;
 var RanaIng;
 var Unk;
-var timeout = 1000;
+var timeout = 3000;
 
 function createModals() {
     Flora = new bootstrap.Modal(document.getElementById('flora'))
