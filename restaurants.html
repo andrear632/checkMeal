@@ -26,21 +26,101 @@
     </div>
 
     <div class="mt-3 text-center">
-        <svg class="bi bi-search me-3" id="searchicon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <svg class="bi bi-search me-3" id="searchicon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
         </svg>
             
-        <input id="searchbar" class="me-4" type="text"></input>
+        <input id="searchbar" class="me-4" type="text" placeholder="Search..."></input>
     </div>
     
     <div class="text-center">
-        <a type="button" href="results.html" class="btn btn-link">
+        <a type="button" href="loading.html" class="btn btn-link fs-5">
             Show restaurants around me
         </a>
     </div>
 
-    <div class="container mb-5">
-        <button id="edit" onclick="document.location='edit.html'" class="btn btn-warning mx-auto d-block btn-lg">
+    <div class="container">
+        <div class="row mx-auto text-center">
+            <div class="col-12 py-2 fs-4">
+                <input class="form-check-input" id="opennow" type="checkbox" name="open now">
+                <label for="opennow" class="mx-3">
+                    Open now
+                </label>
+            </div>
+        </div>
+
+
+        <div class="row container ps-3">
+            <div class="ps-5">
+                <div class="row mt-3 ps-5">
+                    <div class="col-12 py-1 fs-4">
+                        <input class="form-check-input" id="breakfast" type="radio" name="meal" checked>
+                        <label for="breakfast" class="mx-3">
+                            Breakfast
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="row ps-5">
+                    <div class="col-12 py-1 fs-4">
+                        <input class="form-check-input" id="lunch" type="radio" name="meal">
+                        <label for="lunch" class="mx-3">
+                            Lunch
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="row ps-5">
+                    <div class="col-12 py-1 fs-4">
+                        <input class="form-check-input" id="happy hour" type="radio" name="meal">
+                        <label for="happy hour" class="mx-3">
+                            Happy hour
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="row ps-5">
+                    <div class="col-12 py-1 fs-4">
+                        <input class="form-check-input" id="dinner" type="radio" name="meal">
+                        <label for="dinner" class="mx-3">
+                            Dinner
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row container text-center mt-3">
+            <div class="fs-3">
+                Price
+            </div>
+        </div>
+
+        <div class="row mt-1 fs-4 px-4">
+            <div class="col-4">
+                <input class="form-check-input" id="e1" type="checkbox" name="e1">
+                    <label for="e1" class="mx-2">
+                        €
+                    </label>
+            </div>
+            <div class="col-4">
+                <input class="form-check-input" id="e2" type="checkbox" name="e2">
+                    <label for="e2" class="mx-2">
+                        €€
+                    </label>
+            </div>
+            <div class="col-4">
+                <input class="form-check-input" id="e3" type="checkbox" name="e3">
+                    <label for="e3" class="mx-2">
+                        €€€
+                    </label>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="container my-4">
+        <button id="edit" onclick="document.location='loading.html'" class="btn btn-warning mx-auto d-block btn-lg">
             Search
         </button>
     </div>

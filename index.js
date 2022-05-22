@@ -43,12 +43,14 @@ function loadLocalStorage() {
         }
         input.type = "checkbox"
         input.name = final[i]
+        input.id=final[i]
         if (i < top.length) {
             input.checked = true
         }
 
         var label = document.createElement('label')
         label.classList.add("mx-3")
+        label.setAttribute("for",final[i])
         label.innerHTML = final[i]
 
         col.appendChild(input)
