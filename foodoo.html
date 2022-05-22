@@ -15,7 +15,7 @@
 <body>
     
     <div class="text-center mt-3">
-        <a type="button" href="loading.html" class="btn btn-link fs-5">
+        <a type="button" href="results.html" class="btn btn-link fs-5">
             &lt; Go back to result page
         </a>
     </div>
@@ -42,85 +42,203 @@
         <div class="display-5 mt-3 mx-auto d-block text-center">Filtered menu:</div>
     </div>
 
-    <div class="accordion px-3 mt-3" id="accordionExample">
+    <div class="accordion px-3 mt-3 overflow-auto" style="height:45%" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Cheeseburger
+                <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Hamburger
                 </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-             
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid" src="icons/hamb.png">
+                        </div>
+                        <div class="col-8 fs-5">
+                            Classic beefburger with 200g patty, fresh salad and tomatoes
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4 fs-3 mt-2 text-center">
+                            11.00€
+                        </div>
+                        <div class="col-2 fs-5">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Lactose free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Gluten free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Corn free.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Hamburger
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Cheeseburger
                 </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-              
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid" src="icons/cheese.png">
+                        </div>
+                        <div class="col-8 fs-5">
+                            Beefburger with 200g patty, cheddar, fresh salad and tomatoes
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4 fs-3 mt-2 text-center">
+                            13.00€
+                        </div>
+                        <div class="col-2 fs-5">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Lactose free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Gluten free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Corn free.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Special burger
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Fries
                 </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-              
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid" src="icons/fries.png">
+                        </div>
+                        <div class="col-8 fs-5">
+                            Fresh potatoes, cut and fried for you
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4 fs-3 mt-2 text-center">
+                            3.00€
+                        </div>
+                        <div class="col-6 fs-5">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Vegan.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Fries
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Baked potato
                 </button>
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-              
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid" src="icons/bake.png">
+                        </div>
+                        <div class="col-8 fs-5">
+                            Baked potato with cheddar, butter or plain
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4 fs-3 mt-2 text-center">
+                            3.50€
+                        </div>
+                        <div class="col-6 fs-5">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Vegan.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Baked potato
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Soda
                 </button>
             </h2>
             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-              
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid" src="icons/coke.png">
+                        </div>
+                        <div class="col-8 fs-5">
+                            Coke, Fanta or Sprite
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4 fs-3 mt-2 text-center">
+                            3.00€
+                        </div>
+                        <div class="col-8 fs-5">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingSix">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Coke
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Menu
                 </button>
             </h2>
             <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-              
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid" src="icons/menu.png">
+                        </div>
+                        <div class="col-8 fs-5">
+                            Hamburger or cheesburger, fries and coke
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4 fs-3 mt-2 text-center">
+                            16.00€
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Nuts free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Lactose free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Gluten free.png">
+                        </div>
+                        <div class="col-2 fs-5 g-0 px-1">
+                            <img class="img-fluid" src="icons/Corn free.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="btn-group btn-group-lg fixed-bottom">
-        <a href="needs.html" type="button" class="mybtn1 btn btn-warning border border-1 rounded-0 py-2">Your Needs</a>
+        <a href="needs.html" type="button" class="btn btn-warning border border-1 rounded-0 py-2">Your Needs</a>
         <a href="scan.html" type="button" class="btn border btn-warning border-1 rounded-0 py-2">Scan</a>
-        <a href="restaurants.html" type="button" class="btn border btn-warning border-1 rounded-0 py-2">Restaurants</a>
+        <a href="restaurants.html" type="button" class="mybtn1 btn border btn-warning border-1 rounded-0 py-2">Restaurants</a>
     </div>
 
 </body>
