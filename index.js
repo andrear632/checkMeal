@@ -170,7 +170,6 @@ var videoElement = document.querySelector('video');
 
 function openCamera() {
     document.getElementById("video").removeAttribute("hidden");
-    document.getElementById('faq').style.visibility = ""
     getStream();
 }
 
@@ -195,6 +194,7 @@ function gotStream(stream) {
     var x = document.getElementById("divScanBox");
     x.style.display = "block"
     videoElement.srcObject = stream;
+    document.getElementById('faq').style.visibility = ""
     setTimeout(resultScan, timeout);
 }
 
