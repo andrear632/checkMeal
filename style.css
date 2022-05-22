@@ -6,3 +6,7 @@ body {
 .mybtn1 {
     background-color: rgba(235, 92, 42, 0.9) !important;
 }
+
+.popover-body {
+    color: red !important;
+}

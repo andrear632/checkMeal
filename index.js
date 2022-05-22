@@ -43,14 +43,14 @@ function loadLocalStorage() {
         }
         input.type = "checkbox"
         input.name = final[i]
-        input.id=final[i]
+        input.id = final[i]
         if (i < top.length) {
             input.checked = true
         }
 
         var label = document.createElement('label')
         label.classList.add("mx-3")
-        label.setAttribute("for",final[i])
+        label.setAttribute("for", final[i])
         label.innerHTML = final[i]
 
         col.appendChild(input)
@@ -248,16 +248,23 @@ function lastScan() {
     videoElement.play()
 }
 
-function activatePopover() {
-    var pop = bootstrap.Popover.getInstance("#edit")
-    pop.show()
+function activatePopover(location) {
 
-    setTimeout(function() {
+    if (location == "edit") {
+        var selector = "#" + location
+        var pop = bootstrap.Popover.getInstance(selector)
+        pop.setContent({
+            '.popover-body': 'Tap here to edit you dietary needs. They will be used to check you products you scan and to filter restaurants menus'
+        })
+        pop.show()
+    }
+
+    setTimeout(function () {
         document.body.addEventListener("click", disablePopover)
     }, 500)
 }
 
-function disablePopover(){
+function disablePopover() {
     document.body.removeEventListener("click", disablePopover)
     var pop = bootstrap.Popover.getInstance("#edit")
     pop.hide()
