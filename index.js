@@ -1,34 +1,31 @@
 var all_needs = ["Gluten free", "Lactose free", "Corn free", "Egg free", "Fish free", "Mollusc free", "Nuts free", "Peanuts free", "Shellfish free", "Soy free", "Vegan"].sort()
 function loadLocalStorage() {
-    if (typeof (localStorage.needs) == "undefined") {
-        return
-    }
-    var checked = JSON.parse(localStorage.needs).sort()
+    var final;
     var top = []
     var bottom = []
     var div = document.getElementById("needs")
-    var children = div.children
-
-
-
-    for (var i = 0; i < all_needs.length; i++) {
-        if (checked.includes(all_needs[i])) {
-            top.push(all_needs[i])
-        }
-        else {
-            bottom.push(all_needs[i])
-        }
+    if (typeof (localStorage.needs) == "undefined") {
+        final = all_needs
     }
-    top.sort()
-    bottom.sort()
-    var final = top.concat(bottom)
+    else {
+        var checked = JSON.parse(localStorage.needs).sort()
 
+        for (var i = 0; i < all_needs.length; i++) {
+            if (checked.includes(all_needs[i])) {
+                top.push(all_needs[i])
+            }
+            else {
+                bottom.push(all_needs[i])
+            }
+        }
+        top.sort()
+        bottom.sort()
+         final = top.concat(bottom)
+    }
     for (var i = 0; i < final.length; i++) {
         var row = document.createElement('div')
         row.classList.add("row")
         row.classList.add("mx-auto")
-
-        console.log(row)
 
         var col = document.createElement('div')
         col.classList.add("col-12")
@@ -150,11 +147,9 @@ function saveLocalStorage() {
     for (var i = 0; i < div.length; i++) {
         if (div[i].checked) {
             checked.push(div[i].name)
-            // console.log(div[i].name)
         }
     }
     localStorage.needs = JSON.stringify(checked)
-    // console.log(checked)
 }
 
 
