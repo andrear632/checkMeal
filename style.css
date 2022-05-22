@@ -8,5 +8,7 @@ body {
 }
 
 .popover-body {
-    color: red !important;
+    color: black !important;
+    text-align: center;
+    font-size:large;
 }
