@@ -13,7 +13,7 @@
     <link rel="icon" type="image/x-icon" href="icons/logo_small.png">
 </head>
 
-<body onload="getLocalStorage();">
+<body onload="getLocalStorage(); getToast();">
     <div class="text-end mt-1 me-1">
         <a class="btn btn-link" style="color: black;" onclick="activatePopover('edit');">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
@@ -36,6 +36,20 @@
         <button id="edit" onclick="document.location='edit.html'" class="btn btn-warning mx-auto d-block btn-lg" tabindex="0" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" data-bs-content=" ">
             Edit your needs
         </button>
+    </div>
+
+    <div class="toast-container d-flex justify-content-center align-items-center w-100" style="top:35%!important;">
+        <div class="toast bg-white" style="height: 25vh">
+            <div class="toast-header fs-2 text-success">
+                <div class="col-10">Changes saved</div>
+                <div class="col-2">
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+            <div class="toast-body fs-2 mt-3">
+              Your needs have been saved
+            </div>
+        </div>
     </div>
     
     <div class="btn-group btn-group-lg fixed-bottom">
