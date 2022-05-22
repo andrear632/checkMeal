@@ -227,3 +227,10 @@ function thirdScan(){
 
     }, 3000)  
 }
+
+function activePopover(){
+    console.log("HERE")
+    const popover = new bootstrap.Popover(".popover-dismiss", {
+        trigger: 'focus'
+      })
+}
